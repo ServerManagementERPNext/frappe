@@ -150,7 +150,7 @@ def process_response(response):
 		return
 
 	# set cookies
-	if hasattr(frappe.local, "cookie_manager"):
+	if hasattr(frappe.local, "cookie_manager") and not frappe.flags.no_flush_cookies:
 		frappe.local.cookie_manager.flush_cookies(response=response)
 
 	# rate limiter headers
