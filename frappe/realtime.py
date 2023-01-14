@@ -118,7 +118,8 @@ def can_subscribe_doc(doctype, docname):
 	from frappe.sessions import Session
 
 	session = Session(None, resume=True).get_session_data()
-	if not frappe.has_permission(user=session.user, doctype=doctype, doc=docname, ptype="read"):
+	if not frappe.has_permission(user=session.user, doctype=doctype, doc=docname, ptype="read")\
+			and not frappe.has_website_permission(docname, doctype=doctype, ptype="read", user=session.user):
 		raise PermissionError()
 
 	return True
