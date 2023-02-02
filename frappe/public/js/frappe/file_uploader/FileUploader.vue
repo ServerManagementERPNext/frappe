@@ -302,9 +302,11 @@ export default {
 			}
 
 			if (!is_correct_type) {
+				frappe.msgprint(__('File (' + file.name +  ') skipped because of invalid file type'));
 				console.warn('File skipped because of invalid file type', file);
 			}
 			if (!valid_file_size) {
+				frappe.msgprint(__('File (' + file.name +  ') skipped because file size limit exceed'));
 				console.warn('File skipped because of invalid file size', file.size, file);
 			}
 
