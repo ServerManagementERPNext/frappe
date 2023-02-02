@@ -246,8 +246,7 @@
    "fieldname": "mobile_no",
    "fieldtype": "Data",
    "label": "Mobile No",
-   "options": "Phone",
-   "unique": 1
+   "options": "Phone"
   },
   {
    "fieldname": "birth_date",
@@ -668,7 +667,7 @@
    "link_fieldname": "user"
   }
  ],
- "modified": "2022-09-19 16:10:56.745069",
+ "modified": "2023-01-08 13:37:50.175090",
  "modified_by": "Administrator",
  "module": "Core",
  "name": "User",
@@ -701,7 +700,6 @@
  "show_name_in_global_search": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": [],
  "title_field": "full_name",
  "track_changes": 1
 }

@@ -554,20 +554,20 @@ frappe.request.report_error = function(xhr, request_opts) {
 		if (!frappe.error_dialog) {
 			frappe.error_dialog = new frappe.ui.Dialog({
 				title: __('Server Error'),
-				primary_action_label: __('Report'),
-				primary_action: () => {
-					if (error_report_email) {
-						show_communication();
-					} else {
-						frappe.msgprint(__('Support Email Address Not Specified'));
-					}
-					frappe.error_dialog.hide();
-				},
-				secondary_action_label: __('Copy error to clipboard'),
-				secondary_action: () => {
-					copy_markdown_to_clipboard();
-					frappe.error_dialog.hide();
-				}
+				//primary_action_label: __('Report'),
+				//primary_action: () => {
+				//	if (error_report_email) {
+				//		show_communication();
+				//	} else {
+				//		frappe.msgprint(__('Support Email Address Not Specified'));
+				//	}
+				//	frappe.error_dialog.hide();
+				//},
+				//secondary_action_label: __('Copy error to clipboard'),
+				//secondary_action: () => {
+				//	copy_markdown_to_clipboard();
+				//	frappe.error_dialog.hide();
+				//}
 			});
 			frappe.error_dialog.wrapper.classList.add('msgprint-dialog');
 
