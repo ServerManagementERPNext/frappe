@@ -1106,12 +1106,10 @@ def get_module_profile(module_profile):
 
 
 def create_contact(user, ignore_links=False, ignore_mandatory=False):
-	from frappe.contacts.doctype.contact.contact import get_contact_name
-
 	if user.name in ["Administrator", "Guest"]:
 		return
 
-	contact_name = get_contact_name(user.email)
+	contact_name = frappe.db.get_value("Contact", filters={"user": user.name})
 	if not contact_name:
 		contact = frappe.get_doc(
 			{
