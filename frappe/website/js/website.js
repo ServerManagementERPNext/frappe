@@ -72,7 +72,7 @@ $.extend(frappe, {
 
 		frappe.prepare_call(opts);
 		if(opts.freeze) {
-			frappe.freeze();
+			frappe.freeze(opts.freeze_message);
 		}
 		return $.ajax({
 			type: opts.type || "POST",
@@ -236,7 +236,7 @@ $.extend(frappe, {
 	freeze: function(msg) {
 		// blur
 		if(!$('#freeze').length) {
-			var freeze = $('<div id="freeze" class="modal-backdrop fade"></div>')
+			var freeze = $('<div id="freeze" class="modal-backdrop fade show"></div>')
 				.appendTo("body");
 
 			freeze.html(repl('<div class="freeze-message-container"><div class="freeze-message">%(msg)s</div></div>',
